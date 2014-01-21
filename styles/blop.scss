@@ -1,6 +1,6 @@
-$dropper-css-prefix:  dropper !default;
+$blop-css-prefix:  blop !default;
 
-.#{$dropper-css-prefix} {
+.#{$blop-css-prefix} {
     position: relative;
     border: 5px dashed #DDD;
     text-align: center;
@@ -9,7 +9,7 @@ $dropper-css-prefix:  dropper !default;
     margin: 1rem;
     box-sizing: content-box;
 
-    .#{$dropper-css-prefix}__dropzone {
+    .#{$blop-css-prefix}__dropzone {
         padding: 3rem;
         position: relative;
         
@@ -19,7 +19,7 @@ $dropper-css-prefix:  dropper !default;
         }
     }
     
-    .#{$dropper-css-prefix}__input {
+    .#{$blop-css-prefix}__input {
         position: absolute;
         top:0;
         right:0;
@@ -33,14 +33,14 @@ $dropper-css-prefix:  dropper !default;
         z-index: 1;
     }
     
-    .#{$dropper-css-prefix}__preview {
+    .#{$blop-css-prefix}__preview {
         z-index: 2;
         position: relative;
         display: none;
         vertical-align: bottom;
     }
     
-    .#{$dropper-css-prefix}__toolbar {
+    .#{$blop-css-prefix}__toolbar {
         position: absolute;
         left: .5rem;
         bottom: .5rem;
@@ -57,20 +57,20 @@ $dropper-css-prefix:  dropper !default;
         }
     }
     
-    .#{$dropper-css-prefix}__set,
-    .#{$dropper-css-prefix}__clear,
-    .#{$dropper-css-prefix}__rotate {
+    .#{$blop-css-prefix}__set,
+    .#{$blop-css-prefix}__clear,
+    .#{$blop-css-prefix}__rotate {
         display: none;
     }
 
-    .#{$dropper-css-prefix}__image {
+    .#{$blop-css-prefix}__image {
         margin: 0 auto;
         display: block;
         max-width: 100%; 
         height: auto;
     }
     
-    .#{$dropper-css-prefix}__result {
+    .#{$blop-css-prefix}__result {
         display: block;
         
         a {
@@ -98,14 +98,14 @@ $dropper-css-prefix:  dropper !default;
     &.empty {
         border-style: dashed;
     
-        .#{$dropper-css-prefix}__dropzone {
+        .#{$blop-css-prefix}__dropzone {
             display: block;
         }
     }
     
     // Cropping - Show Set and Clear and Rotate buttons
     &.active {
-        .#{$dropper-css-prefix}__set {
+        .#{$blop-css-prefix}__set {
             display: block;
         }
     }
@@ -115,12 +115,12 @@ $dropper-css-prefix:  dropper !default;
     &.active {
         border-style: solid;
         
-        .#{$dropper-css-prefix}__dropzone {
+        .#{$blop-css-prefix}__dropzone {
             display: none;
         }
         
-        .#{$dropper-css-prefix}__preview,
-        .#{$dropper-css-prefix}__clear {
+        .#{$blop-css-prefix}__preview,
+        .#{$blop-css-prefix}__clear {
             display: inline-block;
         }
     }

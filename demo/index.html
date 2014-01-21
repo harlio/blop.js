@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Dropper.js Plugin</title>
-        <link rel="stylesheet" href="../styles/dropper.css">
+        <title>Blop.js Plugin</title>
+        <link rel="stylesheet" href="../styles/blop.css">
     </head>
     <body>
-        <div class="dropper">
-            <div class="dropper__dropzone">
-                <input type="file" class="dropper__input" />
+        <div class="blop">
+            <div class="blop__dropzone">
+                <input type="file" class="blop__input" />
                 <span>Drag & Drop to upload</span>
-                <button type="button" class="dropper__select">or, Select File</button>
+                <button type="button" class="blop__select">or, Select File</button>
             </div>
-            <div class="dropper__preview">
-                <div class="dropper__result">
-                    <img class="dropper__image img-responsive" />
+            <div class="blop__preview">
+                <div class="blop__result">
+                    <img class="blop__image img-responsive" />
                 </div>
             </div>
-            <menu class="dropper__toolbar">
-                <button type="button" class="dropper__set">Set</button></li>
-                <button type="reset" class="dropper__clear">Clear</button></li>
+            <menu class="blop__toolbar">
+                <button type="button" class="blop__set">Set</button></li>
+                <button type="reset" class="blop__clear">Clear</button></li>
             </menu>
         </div>
         
@@ -26,10 +26,10 @@
         <script src="../libs/load-image.min.js"></script>
         <script src="../libs/canvas-to-blob.min.js"></script>
         <script src="../libs/jcrop/jcrop.min.js"></script>
-        <script src="../src/dropper.js"></script>
+        <script src="../src/blop.js"></script>
         <script>
             $(function(){
-                $('.dropper').dropper({
+                $('.blop').blop({
                     onClearCallback: function(){
                         alert('Image Cleared');
                     },

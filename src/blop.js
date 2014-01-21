@@ -1,5 +1,5 @@
 /*!
- * jQuery dropper.js
+ * jQuery blop.js
  * Original author: @harleyjessop
  * Licensed under the MIT license
  * Dependencies:
@@ -9,9 +9,9 @@
 
 ;(function ($, window, document, undefined) {
 
-    var pluginName = "dropper",
+    var pluginName = "blop",
         defaults = {
-            blk:              '.dropper',
+            blk:              '.blop',
             elZone:           '__dropzone',
             elPrev:           '__preview',
             elInput:          '__input',
@@ -20,9 +20,9 @@
             elSetBtn:         '__set',
             elPrevImg:        '__image',
             elResult:         '__result',
-            modEmpty:         'dropper--empty',
-            modActive:        'dropper--active',
-            modSet:           'dropper--set',
+            modEmpty:         'blop--empty',
+            modActive:        'blop--active',
+            modSet:           'blop--set',
             setWidth:         250,
             setHeight:        250,
             jcrop:            {
@@ -155,7 +155,7 @@
             }
             
             $(s.opt.blk + s.opt.elResult).html(content);
-            $(s.opt.blk + s.opt.elResult).find('img, canvas').addClass('dropper__image img-responsive');
+            $(s.opt.blk + s.opt.elResult).find('img, canvas').addClass('blop__image img-responsive');
             
             callback(img);
         },
