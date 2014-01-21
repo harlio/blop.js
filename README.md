@@ -11,8 +11,7 @@ Download the [production version][min] or the [development version][max].
 In your web page:
 
 ```html
-<script src="jquery.js"></script>
-<script src="dist/dropper.min.js"></script>
+<script src="dropper.min.js"></script>
 <script>
 jQuery(function($) {
   $.awesome(); // "awesome"

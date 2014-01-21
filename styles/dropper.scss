@@ -1,0 +1,130 @@
+$dropper-css-prefix:  dropper !default;
+
+.#{$dropper-css-prefix} {
+    position: relative;
+    
+    .#{$dropper-css-prefix}__ui {
+        border: 1px solid #333333;
+        position: relative;
+        display: inline-block;
+        text-align: center;
+    }
+    
+    .#{$dropper-css-prefix}__data {
+        display: block;
+        margin-top: 1rem;
+    }
+    
+    .#{$dropper-css-prefix}__dropzone {
+        padding: 2em;
+        position: relative;
+        border: 2px dashed #aaaaaa;
+        margin: 2em;
+        
+        span {
+            margin: 1em 0;
+            display: block;
+        }
+    }
+    
+    .#{$dropper-css-prefix}__input {
+        position: absolute;
+        top:0;
+        right:0;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        z-index:1;
+        height: auto;
+        line-height: auto;
+        cursor: pointer;
+    }
+    .#{$dropper-css-prefix}__preview {
+        z-index: 2;
+        position: relative;
+        display: none;
+    }
+    
+    .#{$dropper-css-prefix}__toolbar {
+        position: absolute;
+        left: 5px;
+        bottom: 5px;
+        cursor: pointer;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        z-index: 999;
+        
+        li {
+            float: left;
+        }
+        li + li {
+            margin-left: 5px;
+        }
+    }
+    
+    .#{$dropper-css-prefix}__set,
+    .#{$dropper-css-prefix}__clear,
+    .#{$dropper-css-prefix}__rotate {
+        display: none;
+    }
+
+    .#{$dropper-css-prefix}__image {
+        margin: 0 auto;
+        display: block;
+        max-width: 100%; 
+        height: auto;
+    }
+    
+    .#{$dropper-css-prefix}__result {
+    
+        a {
+            display: block;
+            text-decoration: none;
+        }
+    }
+    
+    
+    
+    // Empty - Show file selector/dropzone
+    &.empty {
+    
+        .#{$dropper-css-prefix}__dropzone {
+            display: block;
+        }
+        
+    }
+    
+    // Cropping - Show Set and Clear and Rotate buttons
+    &.active {
+    
+        .#{$dropper-css-prefix}__preview,
+        .#{$dropper-css-prefix}__clear,
+        .#{$dropper-css-prefix}__set {
+            display: block;
+        }
+        
+        .#{$dropper-css-prefix}__dropzone {
+            display: none;
+        }
+        
+    }
+    
+    // Image Set - Show Clear button only
+    &.set {
+        
+        .#{$dropper-css-prefix}__preview,
+        .#{$dropper-css-prefix}__clear {
+            display: block;
+        }
+        
+        .#{$dropper-css-prefix}__dropzone {
+            display: none;
+        }
+    }
+    
+    
+}
+
+@import "../libs/jcrop/jcrop";

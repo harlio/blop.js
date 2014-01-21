@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dropper.js Plugin</title>
+        <link rel="stylesheet" href="../styles/dropper.css">
+    </head>
+    <body>
+        <div class="dropper">
+            <div class="dropper__ui">
+                <div class="dropper__dropzone">
+                    <input type="file" class="dropper__input" />
+                    <span>Drag & Drop to upload</span>
+                    <button type="button" class="btn btn-inverse btn-block dropper__button">or, Select File</button>
+                </div>
+                <div class="dropper__preview">
+                    <div class="dropper__result">
+                        <img class="dropper__image img-responsive" />
+                    </div>
+                    <ul class="dropper__toolbar">
+                        <li><button type="button" class="dropper__set">Set</button></li>
+                        <li><button type="button" class="dropper__clear">Clear</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <script src="../libs/jquery-2.0.3.min.js"></script>
+        <script src="../libs/load-image.min.js"></script>
+        <script src="../libs/canvas-to-blob.min.js"></script>
+        <script src="../libs/jcrop/jcrop.min.js"></script>
+        <script src="../src/dropper.js"></script>
+        <script>
+            $(function(){
+                $('.dropper').dropper({
+                    onClearCallback: function(){
+                        alert('Image Cleared');
+                    },
+                    onSetCallback:  function(blob){
+                        console.log(blob);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
