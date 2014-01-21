@@ -1,6 +1,6 @@
-# Dropper.js
+# Blop.js
 
-Client side dropping and cropping using canvas and delivering in a nice clean blob.
+Client side dropping and cropping using canvas and delivering a nice clean blob.
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
