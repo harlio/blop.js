@@ -7,7 +7,7 @@
     https://github.com/tapmodo/Jcrop
  */
 
-;(function ( $, window, document, undefined ) {
+;(function ($, window, document, undefined) {
 
     var pluginName = "dropper",
         defaults = {
@@ -15,6 +15,7 @@
             elZone:           '__dropzone',
             elPrev:           '__preview',
             elInput:          '__input',
+            elSelBtn:         '__select',
             elClrBtn:         '__clear',
             elSetBtn:         '__set',
             elPrevImg:        '__image',
@@ -30,7 +31,7 @@
                 maxSize:      [ 0, 0 ],
                 setSelect:    [ 0, 0, 250, 250 ],
                 bgColor:      'white',
-                bgOpacity:    .3,
+                bgOpacity:    0.3,
                 api:          {}
             },
             onClearCallback:   function(){},
@@ -40,10 +41,10 @@
             cropping:          null
         };
 
-    function Plugin( element, options ) {
+    function Plugin(element, options) {
         this.elem = element;
 
-        this.opt = $.extend( {}, defaults, options) ;
+        this.opt = $.extend({}, defaults, options) ;
 
         this._defaults = defaults;
         this._name = pluginName;
@@ -53,36 +54,26 @@
 
     Plugin.prototype = {
 
-        init: function(s) {
-            var s = this;
-            // Required for drag and drop file access
-            jQuery.event.props.push('dataTransfer');
-                        
-            s.bindUIActions();
+        init: function() {
+            this.bindUIActions();
         },
 
         bindUIActions: function() {
             var s = this;
             
-            $(s.elem).on("dragover", s.opt.blk + s.opt.elZone, function(e) {
+            $(s.elem).on("dragover", s.opt.blk + s.opt.elZone, function() {
                 // Required for drop to work
                 return false;
             });
             
             $(s.elem).on('drop', s.opt.blk + s.opt.elZone, function(e) {
-                // Or else the browser will open the file
                 e.preventDefault();
-            
-/*                 self.handleDrop(e.dataTransfer.files); */
                 s.handleDrop(e);
             });
             
             $(s.elem).on('change', s.opt.blk + s.opt.elInput, function(e) {
-/*                 self.handleDrop(e.target.files); */
                 s.handleDrop(e);
             });
-            
-            
             
             $(s.elem).on('click', s.opt.blk + s.opt.elClrBtn, function(e) {
                 e.preventDefault();
@@ -92,13 +83,10 @@
                 
                 var jcropHolder = $(s.elem).find('.jcrop-holder');
                 if (jcropHolder.length > 0) {
-                    
                     // remove jcrop
-                    s.opt.api.instance.destroy();
+                    s.opt.jcrop.api.instance.destroy();
                     jcropHolder.remove();
-                    
                 }
-                
 
                 // Callback on clear
                 s.opt.onClearCallback();
@@ -124,13 +112,11 @@
         handleDrop: function(e) {
             var s = this;
             s.hideDropzone();
-            
-            
             e = e.originalEvent;
             var target = e.dataTransfer || e.target,
                 file = target && target.files && target.files[0];
             if (!file){
-                return
+                return;
             }
             s.opt.currentFile = file;
             s.displayImg(file); 
@@ -138,7 +124,6 @@
         
         displayImg: function(file) {
             var s = this;
-
             if (!loadImage(
                     file,
                     function(img){
@@ -205,7 +190,7 @@
 
         },
         
-        setCrop: function(){
+        setCrop: function() {
             var s = this,
                 img = $(s.elem).find(s.opt.blk + s.opt.elResult).find('img, canvas')[0];
                 
@@ -227,8 +212,8 @@
         
         allDone: function(img){
             var s = this;
+                
             $(s.elem).removeClass('active').addClass('set');
-            console.log(img);
             
             if (img.toBlob) {
                 img.toBlob( 

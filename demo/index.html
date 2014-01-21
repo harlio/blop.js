@@ -6,22 +6,20 @@
     </head>
     <body>
         <div class="dropper">
-            <div class="dropper__ui">
-                <div class="dropper__dropzone">
-                    <input type="file" class="dropper__input" />
-                    <span>Drag & Drop to upload</span>
-                    <button type="button" class="btn btn-inverse btn-block dropper__button">or, Select File</button>
-                </div>
-                <div class="dropper__preview">
-                    <div class="dropper__result">
-                        <img class="dropper__image img-responsive" />
-                    </div>
-                    <ul class="dropper__toolbar">
-                        <li><button type="button" class="dropper__set">Set</button></li>
-                        <li><button type="button" class="dropper__clear">Clear</button></li>
-                    </ul>
+            <div class="dropper__dropzone">
+                <input type="file" class="dropper__input" />
+                <span>Drag & Drop to upload</span>
+                <button type="button" class="dropper__select">or, Select File</button>
+            </div>
+            <div class="dropper__preview">
+                <div class="dropper__result">
+                    <img class="dropper__image img-responsive" />
                 </div>
             </div>
+            <menu class="dropper__toolbar">
+                <button type="button" class="dropper__set">Set</button></li>
+                <button type="reset" class="dropper__clear">Clear</button></li>
+            </menu>
         </div>
         
         <script src="../libs/jquery-2.0.3.min.js"></script>

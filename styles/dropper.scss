@@ -2,27 +2,19 @@ $dropper-css-prefix:  dropper !default;
 
 .#{$dropper-css-prefix} {
     position: relative;
-    
-    .#{$dropper-css-prefix}__ui {
-        border: 1px solid #333333;
-        position: relative;
-        display: inline-block;
-        text-align: center;
-    }
-    
-    .#{$dropper-css-prefix}__data {
-        display: block;
-        margin-top: 1rem;
-    }
-    
+    border: 5px dashed #DDD;
+    text-align: center;
+    background-color: #eeeeee;
+    font-family: sans-serif;
+    margin: 1rem;
+    box-sizing: content-box;
+
     .#{$dropper-css-prefix}__dropzone {
-        padding: 2em;
+        padding: 3rem;
         position: relative;
-        border: 2px dashed #aaaaaa;
-        margin: 2em;
         
         span {
-            margin: 1em 0;
+            margin: 1rem 0;
             display: block;
         }
     }
@@ -33,22 +25,25 @@ $dropper-css-prefix:  dropper !default;
         right:0;
         left: 0;
         bottom: 0;
-        opacity: 0;
-        z-index:1;
+        width: 100%;
         height: auto;
         line-height: auto;
         cursor: pointer;
+        opacity: 0;
+        z-index: 1;
     }
+    
     .#{$dropper-css-prefix}__preview {
         z-index: 2;
         position: relative;
         display: none;
+        vertical-align: bottom;
     }
     
     .#{$dropper-css-prefix}__toolbar {
         position: absolute;
-        left: 5px;
-        bottom: 5px;
+        left: .5rem;
+        bottom: .5rem;
         cursor: pointer;
         text-align: left;
         margin: 0;
@@ -56,11 +51,9 @@ $dropper-css-prefix:  dropper !default;
         list-style-type: none;
         z-index: 999;
         
-        li {
+        button {
             float: left;
-        }
-        li + li {
-            margin-left: 5px;
+            margin-right: .5rem;
         }
     }
     
@@ -78,50 +71,62 @@ $dropper-css-prefix:  dropper !default;
     }
     
     .#{$dropper-css-prefix}__result {
-    
+        display: block;
+        
         a {
             display: block;
             text-decoration: none;
         }
     }
     
+    button {
+        border: 1px solid #CCC;
+        background: white;
+        outline: none;
+        color: #333;
+        padding: .5rem 1rem;
+        font-weight: bold;
+        position: relative;
+        
+        &:hover {
+            border-color:#666666;
+        }
+    }
     
     
     // Empty - Show file selector/dropzone
     &.empty {
+        border-style: dashed;
     
         .#{$dropper-css-prefix}__dropzone {
             display: block;
         }
-        
     }
     
     // Cropping - Show Set and Clear and Rotate buttons
     &.active {
-    
-        .#{$dropper-css-prefix}__preview,
-        .#{$dropper-css-prefix}__clear,
         .#{$dropper-css-prefix}__set {
             display: block;
         }
-        
-        .#{$dropper-css-prefix}__dropzone {
-            display: none;
-        }
-        
     }
     
     // Image Set - Show Clear button only
-    &.set {
-        
-        .#{$dropper-css-prefix}__preview,
-        .#{$dropper-css-prefix}__clear {
-            display: block;
-        }
+    &.set,
+    &.active {
+        border-style: solid;
         
         .#{$dropper-css-prefix}__dropzone {
             display: none;
         }
+        
+        .#{$dropper-css-prefix}__preview,
+        .#{$dropper-css-prefix}__clear {
+            display: inline-block;
+        }
+    }
+    
+    &.set {
+        display: inline-block;
     }
     
     
