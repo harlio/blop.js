@@ -1,0 +1,129 @@
+@blop-css-prefix:  blop;
+
+.@{blop-css-prefix} {
+    position: relative;
+    border: 5px dashed #DDD;
+    text-align: center;
+    background-color: #eeeeee;
+    font-family: sans-serif;
+    margin: 1rem;
+    min-height: 100%;
+
+    .@{blop-css-prefix}__dropzone {
+        padding: 3rem;
+        position: relative;
+        
+        span {
+            margin: 1rem 0;
+            display: block;
+        }
+    }
+    
+    .@{blop-css-prefix}__input {
+        position: absolute;
+        top:0;
+        right:0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        line-height: auto;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 1;
+    }
+    
+    .@{blop-css-prefix}__preview {
+        z-index: 2;
+        position: relative;
+        display: none;
+        vertical-align: bottom;
+        font-size: 0;
+    }
+    
+    .@{blop-css-prefix}__toolbar {
+        position: absolute;
+        left: .5rem;
+        bottom: .5rem;
+        cursor: pointer;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        z-index: 999;
+        
+        button {
+            float: left;
+            margin-right: .5rem;
+        }
+    }
+    
+    .@{blop-css-prefix}__set,
+    .@{blop-css-prefix}__clear,
+    .@{blop-css-prefix}__rotate {
+        display: none;
+    }
+
+    .@{blop-css-prefix}__image {
+        margin: 0 auto;
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .@{blop-css-prefix}__result {
+        display: inline-block;
+    }
+    
+    button {
+        border: 1px solid #CCC;
+        background: white;
+        outline: none;
+        color: #333;
+        padding: .5rem 1rem;
+        font-weight: bold;
+        position: relative;
+        
+        &:hover {
+            border-color:#666666;
+        }
+    }
+    
+    
+    // Empty - Show file selector/dropzone
+    &.empty {
+        border-style: dashed;
+    
+        .@{blop-css-prefix}__dropzone {
+            display: block;
+        }
+    }
+    
+    // Cropping - Show Set and Clear and Rotate buttons
+    &.active {
+        .@{blop-css-prefix}__set {
+            display: block;
+        }
+    }
+    
+    // Image Set - Show Clear button only
+    &.set,
+    &.active {
+        border-style: solid;
+        
+        .@{blop-css-prefix}__dropzone {
+            display: none;
+        }
+        
+        .@{blop-css-prefix}__preview,
+        .@{blop-css-prefix}__clear {
+            display: block;
+        }
+    }
+    
+    &.set {
+        display: inline-block;
+    }
+    
+    
+}
