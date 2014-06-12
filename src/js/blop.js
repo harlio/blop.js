@@ -1,12 +1,3 @@
-/*!
- * jQuery blop.js 1.2
- * Original author: @harleyjessop
- * Licensed under the MIT license
- * Dependencies:
-    https://github.com/blueimp/JavaScript-Load-Image
-    https://github.com/tapmodo/Jcrop
- */
-
 ;(function ($, window, document, undefined) {
 
     var pluginName = "blop",
