@@ -7,7 +7,7 @@ $blop-css-prefix:  blop !default;
     background-color: #eeeeee;
     font-family: sans-serif;
     margin: 1rem;
-    box-sizing: content-box;
+    min-height: 100%;
 
     .#{$blop-css-prefix}__dropzone {
         padding: 3rem;
@@ -38,6 +38,7 @@ $blop-css-prefix:  blop !default;
         position: relative;
         display: none;
         vertical-align: bottom;
+        font-size: 0;
     }
     
     .#{$blop-css-prefix}__toolbar {
@@ -65,18 +66,13 @@ $blop-css-prefix:  blop !default;
 
     .#{$blop-css-prefix}__image {
         margin: 0 auto;
-        display: block;
-        max-width: 100%; 
+        display: inline-block;
+        max-width: 100%;
         height: auto;
     }
     
     .#{$blop-css-prefix}__result {
-        display: block;
-        
-        a {
-            display: block;
-            text-decoration: none;
-        }
+        display: inline-block;
     }
     
     button {
@@ -121,7 +117,7 @@ $blop-css-prefix:  blop !default;
         
         .#{$blop-css-prefix}__preview,
         .#{$blop-css-prefix}__clear {
-            display: inline-block;
+            display: block;
         }
     }
     
@@ -131,5 +127,3 @@ $blop-css-prefix:  blop !default;
     
     
 }
-
-@import "../libs/jcrop/jcrop";

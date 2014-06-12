@@ -1,2 +1,34 @@
-/libs/
-/.sass-cache
+*.py[co]
+*.db
+*.db3
+*.pot
+
+# Editor/IDE files
+*~
+.idea/
+.sass-cache/
+.jshintrc
+
+# Mac Files
+.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Installer logs
+pip-log.txt
+*.log
+
+# Translations
+*.mo
+
+*.sqlite3
+
+#LocalFiles
+#*_local*
+bower_components/
+node_modules/

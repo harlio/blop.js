@@ -2,18 +2,20 @@
 <html>
     <head>
         <title>Blop.js Plugin</title>
-        <link rel="stylesheet" href="../styles/blop.css">
+
+        <link rel="stylesheet" href="../dist/css/blop.css">
+        <link rel="stylesheet" href="../bower_components/jcrop/css/jquery.Jcrop.min.css">
     </head>
     <body>
         <div class="blop">
             <div class="blop__dropzone">
-                <input type="file" class="blop__input" />
-                <span>Drag & Drop to upload</span>
+                <input type="file" class="blop__input" accept="image/jpeg,image/gif,image/png"/>
+                <span>Drag & Drop Your Image Here</span>
                 <button type="button" class="blop__select">or, Select File</button>
             </div>
             <div class="blop__preview">
                 <div class="blop__result">
-                    <img class="blop__image img-responsive" />
+                    <img class="blop__image" />
                 </div>
             </div>
             <menu class="blop__toolbar">
@@ -21,12 +23,15 @@
                 <button type="reset" class="blop__clear">Clear</button></li>
             </menu>
         </div>
-        
-        <script src="../libs/jquery-2.0.3.min.js"></script>
-        <script src="../libs/load-image.min.js"></script>
-        <script src="../libs/canvas-to-blob.min.js"></script>
-        <script src="../libs/jcrop/jcrop.min.js"></script>
-        <script src="../src/blop.js"></script>
+
+        <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/load-image/js/load-image.min.js"></script>
+        <script src="../bower_components/canvas-to-blob/js/canvas-to-blob.min.js"></script>
+        <script src="../bower_components/jcrop/js/jquery.Jcrop.min.js"></script>
+        <!-- endbower -->
+
+        <script src="../dist/js/blop.js"></script>
         <script>
             $(function(){
                 $('.blop').blop({

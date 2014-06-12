@@ -1,0 +1,39 @@
+{
+	"name": "blop",
+	"title": "Blop.js",
+	"description": "Client side dropping and cropping using canvas and delivering a nice clean blob.",
+	"keywords": [
+		"jquery",
+		"canvas",
+		"blob",
+        "crop",
+        "drag and drop",
+        "client side",
+        "jcrop"
+	],
+	"version": "2.0.0",
+	"author": {
+		"name": "Harley Jessop",
+		"email": "harleyjessop@gmail.com",
+		"url": "https://github.com/northborn"
+	},
+	"maintainers": [
+		{
+			"name": "Harley Jessop",
+			"email": "harleyjessop@gmail.com",
+			"url": "https://github.com/northborn"
+		}
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://zenorocha.mit-license.org/"
+		}
+	],
+	"dependencies": {
+		"jquery": ">=1.4",
+        "jcrop": "0.9.12",
+        "canvas-to-blob": "git://github.com/blueimp/JavaScript-Canvas-to-Blob.git",
+        "load-image": "git://github.com/blueimp/JavaScript-Load-Image.git"
+	}
+}
